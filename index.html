@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<script src="script.js"></script>
+		<style type="text/css">
+		.wrapper {
+			max-width: 800px;
+			position: relative;
+			margin: auto;
+			padding-top: 30px;
+		}
+		</style>
+		<meta charset="utf-8">
+	</head>
+
+	<body style="margin:0px;" onload="initSearch()">
+		<div class="wrapper">
+		<table border="0"><tbody>
+			<tr>
+				<td><select id="alloy" value="bismuthbronze" onchange="changeAlloy();">
+					<option value="bismuthbronze">Bismuth Bronze</option>
+					<option value="blackbronze">Black Bronze</option>
+					<option value="bronze">Bronze</option>
+					<option value="brass">Brass</option>
+					<option value="rosegold">Rose Gold</option>
+					<option value="sterlingsilver">Sterling Silver</option>
+					<option value="weaksteel">Weak Steel</option>
+					<option value="weakbluesteel">Weak Blue Steel</option>
+					<option value="weakredsteel">Weak Red Steel</option>
+				</select></td>
+				<td>광물유닛</td>
+				<td>소지개수</td>
+				<td>최소비율</td>
+				<td>최대비율</td>
+			</tr>
+			
+			<tr>
+				<td><input id="name1" type="text" size="15" maxlength="15" value="광물1"></td>
+				<td><input id="unit1" type="text" size="5" maxlength="5" value="25"></td>
+				<td><input id="amount1" type="text" size="5" maxlength="5" value="0"></td>
+				<td><input id="min1" type="text" size="5" maxlength="5" value="0"></td>
+				<td><input id="max1" type="text" size="5" maxlength="5" value="0"></td>
+			</tr>
+			<tr>
+				<td><input id="name2" type="text" size="15" maxlength="15" value="광물2"></td>
+				<td><input id="unit2" type="text" size="5" maxlength="5"value="25"></td>
+				<td><input id="amount2" type="text" size="5" maxlength="5"value="0"></td>
+				<td><input id="min2" type="text" size="5" maxlength="5"value="0"></td>
+				<td><input id="max2" type="text" size="5" maxlength="5"value="0"></td>
+			</tr>
+			<tr>
+				<td><input id="name3" type="text" size="15" maxlength="15" value="광물3"></td>
+				<td><input id="unit3" type="text" size="5" maxlength="5"value="25"></td>
+				<td><input id="amount3" type="text" size="5" maxlength="5"value="0"></td>
+				<td><input id="min3" type="text" size="5" maxlength="5"value="0"></td>
+				<td><input id="max3" type="text" size="5" maxlength="5"value="0"></td>
+			</tr>
+			<tr>
+				<td><input id="name4" type="text" size="15" maxlength="15" value="광물4"></td>
+				<td><input id="unit4" type="text" size="5" maxlength="5"value="25"></td>
+				<td><input id="amount4" type="text" size="5" maxlength="5"value="0"></td>
+				<td><input id="min4" type="text" size="5" maxlength="5"value="0"></td>
+				<td><input id="max4" type="text" size="5" maxlength="5"value="0"></td>
+			</tr>
+		</tbody></table>
+		<div>
+			<button onclick="searchCombination();">Calculate!</button>
+			<input type="checkbox" id="only100"><label for="only100">only divided by 100</label>
+		</div>
+		
+		
+		<div style="margin-top:50px;">
+			<button onclick="clearResults();">Clear</button>
+		</div>
+		<table id="result" style="font-size:1em;" border="1">
+			<tr align="center">
+				<td rowspan="2">합금유닛</td>
+				<td colspan="4">투입개수</td>
+				<td colspan="4">투입비율</td>
+				<td colspan="4">투입유닛</td>
+			</tr>
+			<tr>
+				<td class="name1">광물1</td>
+				<td class="name2">광물2</td>
+				<td class="name3">광물3</td>
+				<td class="name4">광물4</td>
+				
+				<td class="name1">광물1</td>
+				<td class="name2">광물2</td>
+				<td class="name3">광물3</td>
+				<td class="name4">광물4</td>
+				
+				<td class="name1">광물1</td>
+				<td class="name2">광물2</td>
+				<td class="name3">광물3</td>
+				<td class="name4">광물4</td>
+			</tr>
+		</table>
+		</div>
+	</body>
+</html>

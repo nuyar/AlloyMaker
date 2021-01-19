@@ -3,6 +3,30 @@
 	<head>
 		<script src="script.js"></script>
 		<style type="text/css">
+		#rainbow:checked + div + table::after {
+			content: " ";
+			background-image: repeating-linear-gradient(45deg, red, orange, yellow, green, blue, navy, purple, red 300px);
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			z-index:-99;
+		}
+		#rainbow:not(:checked) + div img{
+			display: none;
+		}
+		#rainbow:checked + div span{
+			display: none;
+		}
+		#rainbowdiv {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+		}
+		table {
+			background-color: white;
+		}
 		.wrapper {
 			max-width: 800px;
 			position: relative;
@@ -15,6 +39,8 @@
 
 	<body style="margin:0px;" onload="initSearch()">
 		<div class="wrapper">
+		<input type="checkbox" id="rainbow" style="display:none;" checked>
+		<div id="rainbowdiv"><label for="rainbow"><span>RAINBOW</span><img src="jokbo" width="300px" onerror="document.querySelector('#rainbow').checked=false;document.querySelector('#rainbowdiv').remove();"></img></label></div>
 		<table border="0"><tbody>
 			<tr>
 				<td><select id="alloy" value="bismuthbronze" onchange="changeAlloy();">
